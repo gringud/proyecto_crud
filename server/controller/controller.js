@@ -2,9 +2,9 @@ var Userdb = require ('../model/model');
 
 //create an save new user
 exports.create = (req, res) => {
-    //validar la consulta
+    //validate request
     if (!req.body){
-        res.status(400).send({message: "Contenido del mensaje no puede estar vacioooooooooooooo!"});
+        res.status(400).send({message: "Content can not be emptyyyyyyyyyyyyy!"});
         return;
     }
 
@@ -20,12 +20,12 @@ exports.create = (req, res) => {
     user
     .save(user)
     .then(data=>{
-        //res.send(data)
-        res.redirect('#')
+        /* res.send(data) */
+        res.redirect('/add-user')
     })
     .catch(err=>{
         res.status(500).send({
-            message: err.message || "Ocurrio algun error en la creacion de la operacionnnnnnnnnnnnn"
+            message: err.message || "Some error occurred while crating a creaate operation"
         });
     });
 }
