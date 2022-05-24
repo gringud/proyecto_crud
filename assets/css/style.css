@@ -1,0 +1,124 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Barlow', sans-serif;
+    
+    
+}
+
+.nav{
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    background-color: #16db93;
+    height: 100px;
+}
+
+.nav p{
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+
+main{
+    display: grid;
+    justify-content: center;
+    height:100%;
+    width: 100%;
+}
+.cuadro{
+    margin-top: 1em;
+    border: 3px solid #16db93;
+    height: 510px;
+    width: 600px;
+    border-radius: 1em;
+    
+}
+
+.form-title{
+    margin-top: 1em;
+    display: grid;
+    justify-items: center;
+}
+
+.text-secund{
+    color: #adb5bd;
+}
+
+.form-group{
+    margin-top: 1em;
+    display: grid;
+    justify-content: center;
+}
+
+.form-group input{
+    width: 300px;
+    padding: .6em 1em;
+    margin: .5em 0;
+    border: 4px solid #dee2e6;
+    font-family: 'Barlow',sans-serif;
+    font-size: 1em;
+    border-radius: 1em;
+}
+
+.form-radio{
+    margin-top: 1em;
+    display: grid;
+    justify-content: space-evenly;
+}
+
+
+.form-text{
+    color: #adb5bd;
+}
+
+.radio input[type='radio']{
+    position: absolute;
+    opacity: 0;
+}
+
+.radio input[type='radio']+.radio-label:before{
+    content: "";
+    background: #edf2f4;
+    border-radius: 100%;
+    border: 1px solid #dee2e6;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    position: relative;
+    top: -0em;
+    margin-right: .5em;
+    vertical-align: top;
+    cursor: pointer;
+    text-align: center;
+    -webkit-transition: all 250ms ease;
+    transition: all 250ms ease;
+}
+
+.radio input[type='radio']:checked +.radio-label:before{
+    background-color: #16db93;
+    box-shadow: inset 0 0 0 4px #e9ecef;
+}
+
+.radio input[type='radio']:focus +.radio-label:before{
+    outline: none;
+    border-color: #16db93;
+}
+
+.radio input[type='radio']:disabled +.radio-label:before{
+    box-shadow: 0 0 0 4px #e9ecef;
+    border-color: #b4b4b4;
+    background: #b4b4b4;
+}
+
+.botones{
+    display: flex;
+    margin-top: 1em;
+    justify-content: space-around;
+}
+
+.btn{
+    width: 130px;
+}
+
