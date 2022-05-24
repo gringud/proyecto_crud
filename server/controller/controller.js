@@ -3,6 +3,7 @@ var Userdb = require ('../model/model');
 //create an save new user
 exports.create = (req, res) => {
     //validate request
+    console.log("guardandooooooo");
     if (!req.body){
         res.status(400).send({message: "Content can not be emptyyyyyyyyyyyyy!"});
         return;
@@ -15,17 +16,18 @@ exports.create = (req, res) => {
         gender: req.body.gender,
         status: req.body.status
     });
+    console.log("guardandooooooo");
 
     //save user in the database
     user
     .save(user)
     .then(data=>{
         /* res.send(data) */
-        res.redirect('/add-user')
+        res.redirect('/')
     })
     .catch(err=>{
         res.status(500).send({
-            message: err.message || "Some error occurred while crating a creaate operation"
+            message: err.message || "Some error occurred while crating a creaate operation - ALGO NO ESTA SALIENDO BIEN ASI QUE ERROR"
         });
     });
 }

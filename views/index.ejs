@@ -5,7 +5,7 @@
 <!-- /Include Header -->
 
 <main>
-    <form action="/api/users" method="POST" id="add_user">
+    <form id="add_user">
         <div class="cuadro">
             <div class="form-title">
                 <h2 class="text-dark">Usuarios</h2>
@@ -19,12 +19,12 @@
     
             <div class="form-group">
                 <label class="form-text" for="name">Name</label>
-                <input type="text" id="username" class="form-control" placeholder="Mark Stoenis" >
+                <input type="text" id="username" name="name" class="form-control" placeholder="Mark Stoenis" >
             </div>
     
             <div class="form-group">
                 <label class="form-text" for="name">Email</label>
-                <input type="text" id="useremail" class="form-control" placeholder="example@gmail.com" >
+                <input type="text" id="useremail" name="email" class="form-control" placeholder="example@gmail.com" >
             </div>
     
             <div class="form-radio" style="display: flex; align-items: center;">
@@ -39,18 +39,6 @@
                 </div>
             </div>
     
-            <!-- <div class="form-radio" style="display: flex; align-items: center;">
-                <label class="form-text">Civil Status</label>
-                <div class="radio inline">
-                    <input type="radio" id="radio-3" name="gender" value="Single">
-                    <label for="radio-3" class="radio-label">Single</label>
-                </div>
-                <div class="radio inline">
-                    <input type="radio" id="radio-4" name="gender" value="Divorced">
-                    <label for="radio-4" class="radio-label">Divorced</label>
-                </div>
-            </div> -->
-    
             <div class="form-radio" style="display: flex; align-items: center;">
                 <label for="Gender" class="form-text">Civil Status</label>
                 <div class="radio inline">
@@ -64,7 +52,7 @@
             </div>
         </div>
         <div class="botones">
-            <button type="button" class="btn btn-success" id="btn-create">Create</button>
+            <button action="/api/users" method="POST" type="submit" class="btn btn-success" id="btn-create">Create</button>
             <button type="button" class="btn btn-primary">Read</button>
             <button type="button" class="btn btn-warning">Update</button>
             <button type="button" class="btn btn-danger">Delete All</button>

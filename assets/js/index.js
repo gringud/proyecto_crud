@@ -2,7 +2,8 @@
 
 
 $("#add_user").submit(function(event){
-    console.table("PRESIONE EL BOTON");
+    console.log("PRESIONE EL BOTON");
+    
     alert("Data Inserted Successfully!!!");
 })
 
