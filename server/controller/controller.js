@@ -17,28 +17,34 @@ exports.create = (req, res) => {
         gender: req.body.gender,
         status: req.body.status
     });
-    /* console.log("guardandooooooo ");
+    console.log("guardandooooooo ");
 
-    console.log("*************************************")
+    /* console.log("*************************************")
         console.log("envie todo valor de email "+data.name)
-        console.log("envie todo valor de email "+data.email)
-        console.log("envie todo valor de email "+data.gender)
-        console.log("envie todo valor de email "+data.status)
+        console.log("envie todo valor de email "+data.email) 
+        console.log("envie todo valor de email "+user.name+"-")
+        console.log("envie todo valor de email "+req.data.status+"-")
         console.log("*************************************") */
 
     //save user in the database
-    user
-    .save(user)
-    .then(data=>{
-        /* res.send(data) */
-        
+    if (req.body.name =="" || req.body.email =="" || user.gender === undefined || user.status === undefined){
+        console.log("**************NAME ESTA VACIO****************");
         res.redirect('/')
-    })
-    .catch(err=>{
-        res.status(500).send({
-            message: err.message || "Some error occurred while crating a creaate operation - ALGO NO ESTA SALIENDO BIEN ASI QUE ERROR"
+    } else {
+        user
+        .save(user)
+        .then(data=>{
+            /* res.send(data) */
+            
+            res.redirect('/')
+        })
+        .catch(err=>{
+            res.status(500).send({
+                message: err.message || "Some error occurred while crating a creaate operation - ALGO NO ESTA SALIENDO BIEN ASI QUE ERROR"
+            });
         });
-    });
+
+    }
 }
 
 // retrive and return all user/ retrive and return a single user

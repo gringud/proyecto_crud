@@ -3,6 +3,9 @@
 
 $("#add_user").submit(function(event){
     /* console.log("PRESIONE EL BOTON"); */
+    /* if (req.body.name =="" || req.body.email =="" || req.body.gender ==="" || req.body.status ===""){
+        console.log("ALGO ESTA VACIO");
+    } */
     
     alert("Data Inserted Successfully!!!");
 })
