@@ -1,11 +1,12 @@
 var Userdb = require ('../model/model');
 
 //create an save new user
+
 exports.create = (req, res) => {
     //validate request
-    console.log("guardandooooooo");
+    /* console.log("guardandooooooo"); */
     if (!req.body){
-        res.status(400).send({message: "Content can not be emptyyyyyyyyyyyyy!"});
+        res.status(400).send({message: "Content can not be emptyyyyyyyyyyyyy-NO GUARDE!"});
         return;
     }
 
@@ -16,13 +17,21 @@ exports.create = (req, res) => {
         gender: req.body.gender,
         status: req.body.status
     });
-    console.log("guardandooooooo");
+    /* console.log("guardandooooooo ");
+
+    console.log("*************************************")
+        console.log("envie todo valor de email "+data.name)
+        console.log("envie todo valor de email "+data.email)
+        console.log("envie todo valor de email "+data.gender)
+        console.log("envie todo valor de email "+data.status)
+        console.log("*************************************") */
 
     //save user in the database
     user
     .save(user)
     .then(data=>{
         /* res.send(data) */
+        
         res.redirect('/')
     })
     .catch(err=>{
@@ -34,6 +43,8 @@ exports.create = (req, res) => {
 
 // retrive and return all user/ retrive and return a single user
 exports.find = (req, res) =>{
+    console.log("entre al find req: "+req);
+    console.log("entre al find res: "+res);
 
     if(req.query.id){
         const id = req.query.id;
