@@ -12,10 +12,16 @@ exports.homeRoutes = (req, res)=>{
     })
 }
 
-/* exports.homeRoutes = (req, res)=>{
-    res.render('index',{users:"New Data"});
+exports.update_user = (req, res) => {
+    console.log("entre al update user---------------------")
+    axios.get('http://localhost:3000/api/users',{params:{id:req.query.id}})
+        .then(function(userdata){
+            res.render("update_user", {user: userdata.data})
+        })
+    .catch (err =>{
+        res.send(err);
+    })
 }
- */
 
 
 

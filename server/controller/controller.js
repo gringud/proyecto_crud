@@ -80,12 +80,20 @@ exports.find = (req, res) =>{
 
 //Update a new identified user by user id
 exports.update = (req, res) => {
+
+    console.log("entre al find reqqqqqqqqqq: "+req);
+    console.log("entre al find ressssssssss: "+res);
+
     if(!req.body){
         return res
         .status(400)
         .send({message: "Data to update can not be emptyyyyyyyyyyyyyyyy"})
     }
     const id = req.params.id;
+    console.log("entre al find VALOR DE NOMRE: "+req.body.name);
+    console.log("El valor que tiene ID ES: ---- "+id)
+
+
     Userdb.findByIdAndUpdate(id, req.body, {useFindAndModify: false})
     .then(data=>{
         if(!data){
@@ -93,10 +101,12 @@ exports.update = (req, res) => {
         } else {
             res.send(data)
         }
+        
     })
     .catch(err =>{
         res.status(500).send({message: "Error Update user information "})
     })
+
 }
 
 exports.delete = (req, res) => {

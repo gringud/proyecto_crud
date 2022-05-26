@@ -120,5 +120,15 @@ main{
 
 .btn{
     width: 130px;
+    text-decoration: none;
 }
 
+.btn a{
+    text-decoration: none;
+    color: #dee2e6;   
+}
+
+.btn a:hover{
+    text-decoration: none;
+    color: #dee2e6;   
+}

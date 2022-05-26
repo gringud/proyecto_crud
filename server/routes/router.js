@@ -23,6 +23,7 @@ route.get('/', services.homeRoutes);
  * @description update user
  * @method GET / update-user
  */
+ route.get('/update_user', services.update_user);
 
 /* route.get('/update-user', services.update_user); */
 

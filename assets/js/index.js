@@ -12,6 +12,7 @@ $("#add_user").submit(function(event){
 
 $("#update_user").submit(function(event){   
     event.preventDefault();
+    console.log("ENTRE PORQUE PRESIONE UPDATEeeee")
 
     var unindexed_array = $(this).serializeArray();
     var data ={}
@@ -20,6 +21,10 @@ $("#update_user").submit(function(event){
             data[n['name']] = n['value']
     })
     console.log(data);
+    
+    console.log("VALOR DE DATA.ID ES: ----------  "+data.id)
+
+    // ACA NO ESTOY RECIVIENDO EL ID DATA.ID = UNDEFINED
 
     var request = {
         "url": `http://localhost:3000/api/users/${data.id}`,
